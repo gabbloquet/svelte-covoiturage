@@ -1,4 +1,9 @@
-*Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+# Une solution de micro-covoiturage adaptée pour les grandes entreprises
+
+Chacun enregistrerait sur un site web ou une application mobile son trajet régulier entre son lieu de travail et son domicile. Chaque jour, un peu avant d’effectuer son trajet aller ou retour ( 10 à 30 minutes avant ? ) on valide l’horaire de départ prévu. Un site web / appli mobile et un écran dans le hall de l’établissement récapitulent les départs proches avec la destination à la manière d’un affichage de gare ou d’aéroport, et les gens intéressés pourraient l’indiquer et rejoindre le conducteur à un point de rendez-vous prévu.
+
+Idée trouvée sur Medium : [Source](https://medium.com/@vincentbaudry/8-id%C3%A9es-dapplications-que-j-ai-la-flemme-de-r%C3%A9aliser-mais-que-j-aimerai-utiliser-4cb45719f3c7)
+Merci Vincent Baudry :D
 
 ---
 
