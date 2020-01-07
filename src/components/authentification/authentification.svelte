@@ -1,10 +1,20 @@
 <script>
-    export let lastname;
-    export let firstname;
+  import { createEventDispatcher } from 'svelte';
 
-    function handleClick() {
-      console.log(lastname, firstname)
-    }
+  const dispatch = createEventDispatcher();
+
+  let firstname;
+  let lastname;
+
+  function authentificateUser() {
+    dispatch(
+      'message',
+      {
+        'lastname': lastname,
+        'firstname': firstname
+      }
+    );
+  }
 </script>
 
 <form on:submit|preventDefault>
@@ -17,7 +27,7 @@
     <input class="form__field" placeholder="Firstname" bind:value={firstname}/>
     <label class="form__label">Firstname</label>
   </div>
-    <button on:click|once={handleClick}>
+    <button on:click|once={authentificateUser}>
       Log in
     </button>
 </form>
