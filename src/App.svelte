@@ -1,5 +1,6 @@
 <script>
-  import Authentification from './components/authentification/authentification.svelte'
+  import Authentification from './components/authentification/Authentification.svelte'
+  import Homepage from './components/homepage/homepage.svelte'
 
   let user = {
   	lastname: '',
@@ -14,21 +15,13 @@
 </script>
 
 <main>
-	<h1>Welcome on Svelte covoit'</h1>
-
 	{#if user.lastname ===  ''}
-		<Authentification on:message={updateUser}/>
+		<Authentification on:connexion={updateUser}/>
 	{:else}
-		Coucou {user.lastname} {user.firstname}
+		<Homepage lastname={user.lastname} firstname={user.firstname}/>
 	{/if}
-
 </main>
 
 <style>
-	h1 {
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-		color: var(--COLOR-PINK);
-	}
+
 </style>
