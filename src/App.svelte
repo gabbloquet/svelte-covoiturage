@@ -8,17 +8,16 @@
   };
 
   function updateUser(event){
-  	user.lastname = event.detail.lastname;
-  	user.firstname = event.detail.firstname;
+  	user = event.detail;
   }
 
 </script>
 
 <main>
 	{#if user.lastname ===  ''}
-		<Authentification on:connexion={updateUser}/>
+		<Authentification on:authentification={updateUser}/>
 	{:else}
-		<Homepage lastname={user.lastname} firstname={user.firstname}/>
+		<Homepage user={user}/>
 	{/if}
 </main>
 
