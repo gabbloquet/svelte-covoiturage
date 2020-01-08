@@ -1,6 +1,6 @@
 <script>
   import Authentification from './components/authentification/Authentification.svelte'
-  import Homepage from './views/homepage/homepage.svelte'
+  import Homepage from './views/homepage/Homepage.svelte'
 
   let user = {
   	lastname: '',
@@ -20,7 +20,3 @@
 		<Homepage user={user}/>
 	{/if}
 </main>
-
-<style>
-
-</style>
