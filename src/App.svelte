@@ -1,6 +1,6 @@
 <script>
   import Authentification from './components/authentification/Authentification.svelte'
-  import Homepage from './components/homepage/homepage.svelte'
+  import Homepage from './views/homepage/homepage.svelte'
 
   let user = {
   	lastname: '',

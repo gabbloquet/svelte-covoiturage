@@ -1,6 +1,6 @@
 <script>
   import {onMount} from "svelte";
-  import {loadUserDailyTravel, saveUserTravel} from '../../../services/user/userService'
+  import {loadUserDailyTravel, saveUserTravel} from '../../../utils/services/user/userService'
 
   export let user;
 
@@ -48,5 +48,5 @@
 </main>
 
 <style lang="scss">
-  @import '../../../services/style/form';
+  @import '../../../utils/style/form';
 </style>

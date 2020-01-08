@@ -1,5 +1,5 @@
 <script>
-  import UserTravel from '../user/travel/UserTravel.svelte'
+  import UserTravel from '../../components/user/travel/UserTravel.svelte'
 
   export let user;
 </script>

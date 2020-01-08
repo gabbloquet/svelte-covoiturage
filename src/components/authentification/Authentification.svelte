@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte';
-  import { getUser } from '../../services/user/userService';
+  import { getUser } from '../../utils/services/user/userService';
 
   const dispatch = createEventDispatcher();
 
@@ -36,7 +36,7 @@
 </main>
 
 <style lang="scss">
-  @import '../../services/style/form';
+  @import '../../utils/style/form';
 
   h1 {
     text-transform: uppercase;
