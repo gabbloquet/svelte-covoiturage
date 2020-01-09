@@ -1,0 +1,16 @@
+[{
+  "lastname": "latrampe",
+  "prenom": "hervé",
+  "travel" : {
+    "from": "Valenciennes",
+    "to": "Lille"
+  }
+},
+{
+  "lastname": "toto",
+  "prenom": "toto",
+  "travel" : {
+    "from": "",
+    "to": ""
+  }
+}]
