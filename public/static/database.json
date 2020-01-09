@@ -1,6 +1,6 @@
 [{
   "lastname": "latrampe",
-  "prenom": "hervé",
+  "firstname": "hervé",
   "travel" : {
     "from": "Valenciennes",
     "to": "Lille"
@@ -8,7 +8,7 @@
 },
 {
   "lastname": "toto",
-  "prenom": "toto",
+  "firstname": "toto",
   "travel" : {
     "from": "",
     "to": ""

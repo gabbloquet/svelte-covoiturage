@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte';
-  import { getUser } from '../../utils/services/user/userService';
+  import { authentificateOrCreateUser } from '../../utils/services/user/userService';
 
   const dispatch = createEventDispatcher();
 
@@ -9,7 +9,7 @@
   let lastname;
 
   function authentificateUser() {
-    user = getUser(lastname, firstname);
+    user = authentificateOrCreateUser(lastname, firstname);
     dispatch(
       'authentification',
       user

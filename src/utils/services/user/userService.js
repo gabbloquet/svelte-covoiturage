@@ -1,17 +1,13 @@
-function getUser(lastname, firstname){
-  let users = [];
-  fetch('../static/database.json')
-    .then(response => response.json())
-    .then(data => users = data)
+import {createUser, tryAndGetUser} from "./userRepository";
 
-  const user = users
-    .map(user => user.lastname === lastname && user.firstname === firstname);
+function authentificateOrCreateUser(lastname, firstname) {
 
-  console.log(user);
+  const user = tryAndGetUser(lastname, firstname);
 
-  return {
-    lastname: lastname,
-    firstname: firstname
+  if(user === undefined){
+    return createUser(lastname, firstname)
+  } else {
+    return user;
   }
 }
 
@@ -26,5 +22,5 @@ function saveUserTravel(user, travel) {
 
 }
 
-export {getUser, loadUserDailyTravel, saveUserTravel};
+export {authentificateOrCreateUser, loadUserDailyTravel, saveUserTravel};
 

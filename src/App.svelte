@@ -8,7 +8,7 @@
   };
 
   function updateUser(event){
-  	user = event.detail;
+    user = event.detail;
   }
 
 </script>
