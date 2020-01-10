@@ -1,4 +1,11 @@
 [{
+  "lastname": "ice",
+  "firstname": "paul",
+  "travel" : {
+    "from": "Arras",
+    "to": "Paris"
+  }
+},{
   "lastname": "latrampe",
   "firstname": "hervé",
   "travel" : {

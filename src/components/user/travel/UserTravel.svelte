@@ -1,10 +1,27 @@
 <script>
+  import {onMount} from "svelte";
   import {saveUserTravel} from '../../../utils/services/user/userService'
 
   export let user;
 
+  let from;
+  let to;
+
+  onMount( async () => {
+      from = user.travel.from;
+      to = user.travel.to;
+    }
+  );
+
   function saveTravel(){
-    saveUserTravel(user);
+
+    user = saveUserTravel(
+      user,
+      {
+        from: from,
+        to: to
+      }
+    );
   }
 
 </script>
@@ -18,16 +35,16 @@
     <p>You want to modify it ?</p>
   {/if}
 
-  <form>
+  <form on:submit|preventDefault>
     <div class="form__group field">
-      <input class="form__field" placeholder={user.travel.from} bind:value={user.travel.from}/>
+      <input class="form__field" placeholder={from} bind:value={from}/>
       <label class="form__label">From</label>
     </div>
     <div class="form__group field">
-      <input class="form__field" placeholder={user.travel.to} bind:value={user.travel.to}/>
+      <input class="form__field" placeholder={to} bind:value={to}/>
       <label class="form__label">To</label>
     </div>
-    <button on:click|once={saveTravel}>
+    <button on:click={saveTravel}>
       Save
     </button>
   </form>

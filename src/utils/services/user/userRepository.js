@@ -1,6 +1,17 @@
 let users = [];
 getUsers().then(userTab => userTab.map(user => users.push(user)));
 
+
+function getUsers(){
+  if(users.length < 1) {
+    return fetch('../static/database.json')
+      .then(response => response.json());
+  } else {
+    return users;
+  }
+}
+
+
 function createUser(lastname, firstname) {
   const user = {
     lastname: lastname,
@@ -12,11 +23,6 @@ function createUser(lastname, firstname) {
   };
   users.push(user);
   return user;
-}
-
-function getUsers(){
-  return fetch('../static/database.json')
-    .then(response => response.json());
 }
 
 function tryAndGetUser(lastname, firstname){

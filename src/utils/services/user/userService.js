@@ -1,4 +1,4 @@
-import {createUser, tryAndGetUser} from "./userRepository";
+import {createUser, getUsers, tryAndGetUser} from "./userRepository";
 
 function authentificateOrCreateUser(lastname, firstname) {
 
@@ -11,16 +11,9 @@ function authentificateOrCreateUser(lastname, firstname) {
   }
 }
 
-function loadUserDailyTravel(user) {
-  return {
-    from: '',
-    to:''
-  }
-}
-
 function saveUserTravel(user, travel) {
-
+  user.travel = travel;
+  return user;
 }
 
-export {authentificateOrCreateUser, loadUserDailyTravel, saveUserTravel};
-
+export {authentificateOrCreateUser, saveUserTravel};
