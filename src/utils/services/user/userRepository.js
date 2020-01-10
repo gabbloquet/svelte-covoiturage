@@ -31,4 +31,4 @@ function tryAndGetUser(lastname, firstname){
   )[0];
 }
 
-export {createUser, getUsers, tryAndGetUser};
+export {createUser, tryAndGetUser};

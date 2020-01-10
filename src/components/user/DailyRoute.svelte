@@ -1,6 +1,6 @@
 <script>
   import {onMount} from "svelte";
-  import {saveUserTravel} from '../../../utils/services/user/userService'
+  import {saveUserTravel} from '../../utils/services/user/userService'
 
   export let user;
 
@@ -27,11 +27,10 @@
 </script>
 
 <main>
-  <h2>Your travel</h2>
   {#if user.travel.from === ""}
-    <p>You don't define travel yet.</p>
+    <p>You haven't define a daily route yet.</p>
   {:else}
-    <p>You have already define your daily travel ({user.travel.from} - {user.travel.to}).</p>
+    <h2>Your daily route : ({user.travel.from} <-> {user.travel.to})</h2>
     <p>You want to modify it ?</p>
   {/if}
 
@@ -52,5 +51,5 @@
 </main>
 
 <style lang="scss">
-  @import '../../../utils/style/form';
+  @import '../../utils/style/form';
 </style>

@@ -1,4 +1,4 @@
-import {createUser, getUsers, tryAndGetUser} from "./userRepository";
+import {createUser, tryAndGetUser} from "./userRepository";
 
 function authentificateOrCreateUser(lastname, firstname) {
 
