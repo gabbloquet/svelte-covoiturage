@@ -13,8 +13,7 @@
     }
   );
 
-  function saveTravel(){
-
+  function saveTravel() {
     user = saveUserTravel(
       user,
       {
@@ -28,9 +27,9 @@
 
 <main>
   {#if user.travel.from === ""}
-    <p>You haven't define a daily route yet.</p>
+    <h2>You haven't define a daily route yet.</h2>
   {:else}
-    <h2>Your daily route : ({user.travel.from} <-> {user.travel.to})</h2>
+    <h2>Your daily route : ({user.travel.from} - {user.travel.to})</h2>
     <p>You want to modify it ?</p>
   {/if}
 
