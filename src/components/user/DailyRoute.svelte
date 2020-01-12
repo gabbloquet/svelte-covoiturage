@@ -28,6 +28,7 @@
 <main>
   {#if user.travel.from === ""}
     <h2>You haven't define a daily route yet.</h2>
+    <p>You can define it here : </p>
   {:else}
     <h2>Your daily route : ({user.travel.from} - {user.travel.to})</h2>
     <p>You want to modify it ?</p>
@@ -51,4 +52,12 @@
 
 <style lang="scss">
   @import '../../utils/style/form';
+
+  h2 {
+    color: var(--COLOR-BROWN)
+  }
+
+  p {
+    color: darkgrey
+  }
 </style>

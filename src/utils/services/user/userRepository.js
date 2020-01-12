@@ -1,7 +1,6 @@
 let users = [];
 getUsers().then(userTab => userTab.map(user => users.push(user)));
 
-
 function getUsers(){
   if(users.length < 1) {
     return fetch('../static/database.json')
@@ -10,7 +9,6 @@ function getUsers(){
     return users;
   }
 }
-
 
 function createUser(lastname, firstname) {
   const user = {
@@ -31,4 +29,4 @@ function tryAndGetUser(lastname, firstname){
   )[0];
 }
 
-export {createUser, tryAndGetUser};
+export {createUser, getUsers, tryAndGetUser};
