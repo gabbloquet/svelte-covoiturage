@@ -25,7 +25,7 @@
 
 </script>
 
-<main>
+<template>
   {#if user.travel.from === ""}
     <h2>You haven't define a daily route yet.</h2>
     <p>You can define it here : </p>
@@ -48,7 +48,7 @@
     </button>
   </form>
 
-</main>
+</template>
 
 <style lang="scss">
   @import '../../utils/style/form';

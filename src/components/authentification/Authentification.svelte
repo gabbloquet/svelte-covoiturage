@@ -17,7 +17,7 @@
   }
 </script>
 
-<main>
+<template>
   <h1>Welcome on Svelte covoit'</h1>
   <form on:submit|preventDefault>
       <h2>Identifiez vous</h2>
@@ -33,7 +33,7 @@
       Log in
     </button>
   </form>
-</main>
+</template>
 
 <style lang="scss">
   @import '../../utils/style/form';
@@ -47,6 +47,10 @@
 
   h2 {
     color: var(--COLOR-BROWN)
+  }
+
+  form {
+    width: 40%;
   }
 
 </style>

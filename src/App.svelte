@@ -13,10 +13,10 @@
 
 </script>
 
-<main>
+<template>
 	{#if user.lastname ===  ''}
 		<Authentification on:authentification={updateUser}/>
 	{:else}
 		<Homepage user={user}/>
 	{/if}
-</main>
+</template>

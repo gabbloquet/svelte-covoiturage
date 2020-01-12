@@ -14,25 +14,33 @@
   )
 </script>
 
-<main>
+<template>
   <h1>Welcome {user.firstname} !</h1>
 
-  <div>
-    <h2>Your daily route</h2>
-    <UserRoute user={user}/>
-  </div>
+  <div class="bandeau">
+    <div>
+      <UserRoute user={user}/>
+    </div>
 
-  <div>
-    <h2>Other members daily routes</h2>
-    <UsersRoutes users="{users}"/>
+    <div>
+      <UsersRoutes users="{users}"/>
+    </div>
   </div>
-</main>
+</template>
 
 <style>
   h1 {
+    display: flex;
+    justify-content: center;
     text-transform: uppercase;
     font-size: 4em;
     font-weight: 100;
     color: var(--COLOR-PINK);
+  }
+
+  .bandeau {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
   }
 </style>
