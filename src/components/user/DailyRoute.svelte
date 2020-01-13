@@ -4,14 +4,16 @@
   const dispatch = createEventDispatcher();
   export let user;
 
-  let from = user.travel.from;
-  let to = user.travel.to;
+  let travel = {
+    from: '',
+    to: ''
+  };
 
-  $: user.travel.from = from;
-  $: user.travel.to = to;
+  // $: from = user.travel.from;
+  // $: to = user.travel.to;
 
   function saveUserTravel() {
-    dispatch('saveUserTravel', user);
+    dispatch('saveUserTravel', travel);
   }
 </script>
 
@@ -26,11 +28,11 @@
 
   <form on:submit|preventDefault>
     <div class="form__group field">
-      <input class="form__field" placeholder={from} bind:value={from}/>
+      <input class="form__field" placeholder={travel.from} bind:value={travel.from}/>
       <label class="form__label">From</label>
     </div>
     <div class="form__group field">
-      <input class="form__field" placeholder={to} bind:value={to}/>
+      <input class="form__field" placeholder={travel.to} bind:value={travel.to}/>
       <label class="form__label">To</label>
     </div>
     <button on:click={saveUserTravel}>
