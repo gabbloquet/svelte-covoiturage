@@ -2,15 +2,32 @@
   export let users;
 </script>
 
-<style>
+<style lang="scss">
+  @import '../../utils/style/table';
 
+  table {
+    width: 25em;
+  }
 </style>
 
-<template>
+<div class="large">
   <h2>Other members daily routes</h2>
-  <ul>
-    { #each users as user }
-      <li>{user.firstname} {user.lastname}</li>
-    {/each}
-  </ul>
-</template>
+  <table>
+    <thead>
+      <th>User</th>
+      <th>Daily route</th>
+    </thead>
+    <tbody>
+      { #each users as user }
+      <tr>
+        <td>{user.firstname} {user.lastname}</td>
+        {#if user.travel.from !== ""}
+          <td>({user.travel.from} - {user.travel.to})</td>
+        {:else}
+          <td>Undefined</td>
+        {/if}
+      </tr>
+      {/each}
+    </tbody>
+  </table>
+</div>

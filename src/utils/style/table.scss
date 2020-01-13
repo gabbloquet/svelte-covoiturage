@@ -1,0 +1,20 @@
+table{
+  border-collapse: collapse;
+  text-align: center;
+  font-size: large;
+  line-height: 1.5;
+}
+
+tr {
+  color: darkgray;
+}
+
+th {
+  text-transform: uppercase;
+}
+
+td {
+  border: solid;
+  border-width: 1px 0;
+  padding: 0.5em;
+}
