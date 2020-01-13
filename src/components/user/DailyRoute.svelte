@@ -1,28 +1,18 @@
 <script>
-  import {onMount} from "svelte";
-  import {saveUserTravel} from '../../utils/services/user/userService'
+  import { createEventDispatcher } from 'svelte';
 
+  const dispatch = createEventDispatcher();
   export let user;
 
-  let from;
-  let to;
+  let from = user.travel.from;
+  let to = user.travel.to;
 
-  onMount( async () => {
-      from = user.travel.from;
-      to = user.travel.to;
-    }
-  );
+  $: user.travel.from = from;
+  $: user.travel.to = to;
 
-  function saveTravel() {
-    user = saveUserTravel(
-      user,
-      {
-        from: from,
-        to: to
-      }
-    );
+  function saveUserTravel() {
+    dispatch('saveUserTravel', user);
   }
-
 </script>
 
 <template>
@@ -43,7 +33,7 @@
       <input class="form__field" placeholder={to} bind:value={to}/>
       <label class="form__label">To</label>
     </div>
-    <button on:click={saveTravel}>
+    <button on:click={saveUserTravel}>
       Save
     </button>
   </form>

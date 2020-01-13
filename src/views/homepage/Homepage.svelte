@@ -2,7 +2,7 @@
   import {onMount} from "svelte";
   import UserRoute from '../../components/user/DailyRoute.svelte'
   import UsersRoutes from '../../components/user/CommunityDailysRoutes.svelte'
-  import {getAllUsers} from '../../utils/services/user/userService'
+  import {getAllUsers, saveUserTravel} from '../../utils/services/user/userService'
 
 
   export let user;
@@ -11,7 +11,13 @@
   onMount( async () => {
       users = getAllUsers();
     }
-  )
+  );
+
+  function saveUser(user){
+    user = saveUserTravel(user);
+    users = getAllUsers();
+  }
+
 </script>
 
 <template>
@@ -19,7 +25,8 @@
 
   <div class="bandeau">
     <div>
-      <UserRoute user={user}/>
+      <!-- TODO: Catch de l'event, doit appeler saveUserTravel ici -->
+      <UserRoute user={user} on:saveUserTravel={saveUser}/>
     </div>
 
     <div>
