@@ -4,7 +4,6 @@
   import UserRoute from '../../components/user/DailyRoute.svelte'
   import UsersRoutes from '../../components/user/CommunityDailysRoutes.svelte'
 
-
   export let user;
   let users = [];
 
@@ -42,7 +41,7 @@
     text-transform: uppercase;
     font-size: 4em;
     font-weight: 100;
-    color: var(--COLOR-PINK);
+    color: var(--COLOR-ORANGE);
   }
 
   .bandeau {

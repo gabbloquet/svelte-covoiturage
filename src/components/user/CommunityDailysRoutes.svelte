@@ -8,6 +8,10 @@
   table {
     width: 25em;
   }
+
+  h2 {
+    color: var(--COLOR-GREEN-PASTEL);
+  }
 </style>
 
 <div class="large">

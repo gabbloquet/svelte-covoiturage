@@ -42,11 +42,11 @@
     text-transform: uppercase;
     font-size: 4em;
     font-weight: 100;
-    color: var(--COLOR-PINK);
+    color: var(--COLOR-ORANGE);
   }
 
   h2 {
-    color: var(--COLOR-BROWN)
+    color: var(--COLOR-YELLOW)
   }
 
   form {

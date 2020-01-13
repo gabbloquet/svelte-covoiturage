@@ -3,18 +3,20 @@ table{
   text-align: center;
   font-size: large;
   line-height: 1.5;
-}
-
-tr {
-  color: darkgray;
+  background-color: var(--COLOR-GREEN-PASTEL);
 }
 
 th {
   text-transform: uppercase;
+
+  color: var(--COLOR-YELLOW);
 }
 
 td {
   border: solid;
   border-width: 1px 0;
   padding: 0.5em;
+
+  font-size: 1.3rem;
+  color: white;
 }

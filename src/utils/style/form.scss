@@ -11,7 +11,7 @@
   font-family: inherit;
   width: 100%;
   border: 0;
-  border-bottom: 2px solid darkgrey;
+  border-bottom: 2px solid var(--COLOR-YELLOW);
   outline: 0;
   font-size: 1.3rem;
   color: white;
@@ -36,7 +36,7 @@
   display: block;
   transition: 0.2s;
   font-size: 1rem;
-  color: darkgray;
+  color: var(--COLOR-YELLOW);
 }
 
 .form__field:focus {
@@ -46,14 +46,14 @@
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: var(--COLOR-BROWN);
+    color: var(--COLOR-YELLOW);
     font-weight: 700;
   }
   padding-bottom: 6px;
-  border-bottom: 2px solid var(--COLOR-BROWN);
+  border-bottom: 2px solid var(--COLOR-YELLOW);
   font-weight: 700;
   border-width: 3px;
-  border-image: var(--COLOR-BROWN);
+  border-image: var(--COLOR-YELLOW);
   border-image-slice: 1;
 }
 
@@ -62,13 +62,13 @@ form {
   flex-direction: column;
   align-items: center;
   padding: 2em;
-  background-color: var(--COLOR-DARK-ORANGE);
+  background-color: var(--COLOR-GREEN-PASTEL);
 }
 
 button {
-  font-size: large;
+  font-size: larger;
   color: white;
   padding: 0.5em;
   margin-top: 1em;
-  background-color: var(--COLOR-BROWN);
+  background-color: var(--COLOR-YELLOW);
 }
