@@ -52,4 +52,8 @@
   h2 {
     color: var(--COLOR-CYAN);
   }
+
+  form {
+    width: 25em;
+  }
 </style>

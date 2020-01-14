@@ -31,7 +31,7 @@
 
     <div>
       <SimilarDailyRoutes users={users} user={user}/>
-      <UsersRoutes users={users}/>
+      <UsersRoutes users={users} user={user}/>
     </div>
   </div>
 </template>

@@ -1,5 +1,10 @@
 <script>
   export let users;
+  export let user;
+
+  function isNotTheConnectedUser(usr){
+    return user !== usr
+  }
 </script>
 
 <style lang="scss">
@@ -18,19 +23,21 @@
   <h2>Other members daily routes</h2>
   <table>
     <thead>
-      <th>User</th>
+      <th>user</th>
       <th>Daily route</th>
     </thead>
     <tbody>
-      { #each users as user }
-      <tr>
-        <td>{user.firstname} {user.lastname}</td>
-        {#if user.travel.from !== ""}
-          <td>({user.travel.from} - {user.travel.to})</td>
-        {:else}
-          <td>Undefined</td>
+      { #each users as usr }
+        {#if isNotTheConnectedUser(usr)}
+          <tr>
+            <td>{usr.firstname} {usr.lastname}</td>
+            {#if usr.travel.from !== ""}
+              <td>({usr.travel.from} - {usr.travel.to})</td>
+            {:else}
+              <td>Undefined</td>
+            {/if}
+          </tr>
         {/if}
-      </tr>
       {/each}
     </tbody>
   </table>
