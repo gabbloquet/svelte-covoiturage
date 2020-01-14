@@ -41,7 +41,7 @@
     text-transform: uppercase;
     font-size: 4em;
     font-weight: 100;
-    color: var(--COLOR-ORANGE);
+    color: var(--COLOR-CYAN);
   }
 
   .bandeau {

@@ -37,7 +37,6 @@
       Save
     </button>
   </form>
-
 </template>
 
 <style lang="scss">

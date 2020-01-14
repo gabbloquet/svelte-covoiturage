@@ -14,7 +14,7 @@
   }
 </style>
 
-<div class="large">
+<template>
   <h2>Other members daily routes</h2>
   <table>
     <thead>
@@ -34,4 +34,4 @@
       {/each}
     </tbody>
   </table>
-</div>
+</template>
