@@ -5,8 +5,8 @@
   export let userFrom;
   export let userTo;
 
-  let from = undefined
-  let to = undefined
+  let from = undefined;
+  let to = undefined;
 
   $: {
     from = userFrom
@@ -25,7 +25,6 @@
 </script>
 
 <template>
-  From: {from} to: {to}
   {#if !userFrom || !userTo}
     <h2>You haven't define a daily route yet.</h2>
   {:else}
