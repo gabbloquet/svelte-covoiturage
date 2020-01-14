@@ -10,7 +10,7 @@
   }
 
   h2 {
-    color: var(--COLOR-GREEN-PASTEL);
+    color: var(--COLOR-CYAN);
   }
 </style>
 

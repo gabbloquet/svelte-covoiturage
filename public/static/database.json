@@ -20,4 +20,20 @@
     "from": "",
     "to": ""
   }
+},
+{
+  "lastname": "Bloquet",
+  "firstname": "Gabin",
+  "travel" : {
+    "from": "Arras",
+    "to": "Lille"
+  }
+},
+{
+  "lastname": "Bassery",
+  "firstname": "Adrien",
+  "travel" : {
+    "from": "Arras",
+    "to": "Lille"
+  }
 }]
