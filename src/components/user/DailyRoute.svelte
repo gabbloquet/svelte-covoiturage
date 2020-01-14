@@ -2,35 +2,43 @@
   import { createEventDispatcher } from 'svelte';
 
   const dispatch = createEventDispatcher();
-  export let user;
+  export let userFrom;
+  export let userTo;
 
-  let travel = {
-    from: '',
-    to: ''
-  };
+  let from = undefined
+  let to = undefined
 
-  // $: from = user.travel.from;
-  // $: to = user.travel.to;
+  $: {
+    from = userFrom
+  }
+
+  $: {
+    to = userTo
+  }
 
   function saveUserTravel() {
-    dispatch('saveUserTravel', travel);
+    dispatch('saveUserTravel', {
+      from,
+      to
+    });
   }
 </script>
 
 <template>
-  {#if user.travel.from === ""}
+  From: {from} to: {to}
+  {#if !userFrom || !userTo}
     <h2>You haven't define a daily route yet.</h2>
   {:else}
-    <h2>Your daily route : ({user.travel.from} - {user.travel.to})</h2>
+    <h2>Your daily route : ({userFrom} - {userTo})</h2>
   {/if}
 
   <form on:submit|preventDefault>
     <div class="form__group field">
-      <input class="form__field" placeholder={travel.from} bind:value={travel.from}/>
+      <input class="form__field" placeholder={from} bind:value={from}/>
       <label class="form__label">From</label>
     </div>
     <div class="form__group field">
-      <input class="form__field" placeholder={travel.to} bind:value={travel.to}/>
+      <input class="form__field" placeholder={to} bind:value={to}/>
       <label class="form__label">To</label>
     </div>
     <button on:click={saveUserTravel}>

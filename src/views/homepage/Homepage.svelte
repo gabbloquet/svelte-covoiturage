@@ -3,16 +3,17 @@
   import {getAllUsers, saveUserTravel} from '../../utils/services/user/userService'
   import UserRoute from '../../components/user/DailyRoute.svelte'
   import UsersRoutes from '../../components/user/CommunityDailysRoutes.svelte'
+  import SimilarDailyRoutes from "../../components/user/SimilarDailyRoutes.svelte";
 
   export let user;
   let users = [];
 
-  onMount( async () => {
+  onMount(async () => {
       users = getAllUsers();
     }
   );
 
-  function saveUser(event){
+  function saveUser(event) {
     const travel = event.detail;
     user = saveUserTravel(user, travel);
     users = getAllUsers();
@@ -25,11 +26,12 @@
 
   <div class="bandeau">
     <div>
-      <UserRoute user={user} on:saveUserTravel={saveUser}/>
+      <UserRoute userFrom={user.travel.from} userTo={user.travel.to} on:saveUserTravel={saveUser}/>
     </div>
 
     <div>
-      <UsersRoutes users="{users}"/>
+      <SimilarDailyRoutes users={users} user={user}/>
+      <UsersRoutes users={users}/>
     </div>
   </div>
 </template>
