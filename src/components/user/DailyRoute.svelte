@@ -5,21 +5,13 @@
   export let userFrom;
   export let userTo;
 
-  let from = undefined;
-  let to = undefined;
-
-  $: {
-    from = userFrom
-  }
-
-  $: {
-    to = userTo
-  }
+  let from = userFrom;
+  let to = userTo;
 
   function saveUserTravel() {
     dispatch('saveUserTravel', {
-      from,
-      to
+      from: from.toUpperCase(),
+      to: to.toUpperCase()
     });
   }
 </script>
@@ -33,11 +25,11 @@
 
   <form on:submit|preventDefault>
     <div class="form__group field">
-      <input class="form__field" placeholder={from} bind:value={from} required/>
+      <input class="form__field" placeholder={from} bind:value={from}/>
       <label class="form__label">From</label>
     </div>
     <div class="form__group field">
-      <input class="form__field" placeholder={to} bind:value={to} required/>
+      <input class="form__field" placeholder={to} bind:value={to}/>
       <label class="form__label">To</label>
     </div>
     <button on:click={saveUserTravel}>
