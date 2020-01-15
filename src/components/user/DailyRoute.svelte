@@ -33,11 +33,11 @@
 
   <form on:submit|preventDefault>
     <div class="form__group field">
-      <input class="form__field" placeholder={from} bind:value={from}/>
+      <input class="form__field" placeholder={from} bind:value={from} required/>
       <label class="form__label">From</label>
     </div>
     <div class="form__group field">
-      <input class="form__field" placeholder={to} bind:value={to}/>
+      <input class="form__field" placeholder={to} bind:value={to} required/>
       <label class="form__label">To</label>
     </div>
     <button on:click={saveUserTravel}>
