@@ -4,6 +4,7 @@
   import UserRoute from '../../components/user/DailyRoute.svelte'
   import UsersRoutes from '../../components/user/CommunityDailysRoutes.svelte'
   import SimilarDailyRoutes from "../../components/user/SimilarDailyRoutes.svelte";
+  import UsersStatistiques from "../../components/user/UsersStatistiques.svelte";
 
   export let user;
   let users = [];
@@ -32,6 +33,10 @@
     <div>
       <SimilarDailyRoutes users={users} user={user}/>
       <UsersRoutes users={users} user={user}/>
+    </div>
+
+    <div>
+      <UsersStatistiques users={users} user={user}/>
     </div>
   </div>
 </template>
