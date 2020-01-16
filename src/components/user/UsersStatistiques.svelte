@@ -12,12 +12,12 @@
     usersWithSameLocationThanConnectedUser =
         users
             .filter(usr => usr.travel.from === user.travel.from)
-            .count();
+            .length - 1;
 
     usersWithSameDestinationThanConnectedUser =
         users
             .filter(usr => usr.travel.to === user.travel.to)
-            .count();
+            .length -1 ;
   }
 
 </script>
