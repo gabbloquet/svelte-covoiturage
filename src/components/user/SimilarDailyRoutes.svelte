@@ -24,7 +24,7 @@
   }
 
   h2 {
-    color: var(--COLOR-CYAN);
+    color: var(--COLOR-GREEN-LIGHT);
   }
 
   p {

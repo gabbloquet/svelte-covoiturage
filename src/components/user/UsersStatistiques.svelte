@@ -1,14 +1,18 @@
 <script>
-  export let users;
+  export let users = [];
   export let user;
 
-  let usersWithSameLocation;
-  let usersWithSameDestination;
+  let nbUsers;
+
+  let usersWithSameLocation = [];
+  let usersWithSameDestination = [];
 
   let usersWithSameLocationThanConnectedUser;
   let usersWithSameDestinationThanConnectedUser;
 
   $: {
+    nbUsers = users.length;
+
     usersWithSameLocationThanConnectedUser =
         users
             .filter(usr => usr.travel.from === user.travel.from)
@@ -18,13 +22,33 @@
         users
             .filter(usr => usr.travel.to === user.travel.to)
             .length -1 ;
+
+    usersWithSameLocation =
+        users
+            .reduce((acc, usr) => {
+                  acc[usr.travel.from] = (acc[usr.travel.from] || 0) + (1 / nbUsers);
+                  return acc
+                },
+              []);
+
+    usersWithSameDestination =
+        users
+            .reduce((acc, usr) => {
+                acc[usr.travel.to] = (acc[usr.travel.to] || 0) + (1 / nbUsers);
+                return acc;
+              },
+            []);
+
+    console.log(usersWithSameLocation)
+    console.log(usersWithSameDestination)
   }
 
 </script>
 
 <style>
-
-
+  h2 {
+    color: var(--COLOR-GREEN-LIGHT);
+  }
 </style>
 
 <template>
@@ -33,6 +57,6 @@
   <p>Users with the same destination than you : {usersWithSameDestinationThanConnectedUser}</p>
 
   <h2>All statistics</h2>
-
+  {usersWithSameLocation}
 
 </template>
