@@ -1,4 +1,7 @@
 <script>
+  import RadarChart from "../../utils/components/RadarChart.svelte";
+  import convertToChartData from "../../utils/services/chart/chartService";
+
   export let users = [];
   export let user;
 
@@ -14,33 +17,30 @@
     nbUsers = users.length;
 
     usersWithSameLocationThanConnectedUser =
-        users
-            .filter(usr => usr.travel.from === user.travel.from)
-            .length - 1;
+      users
+          .filter(usr => usr.travel.from === user.travel.from)
+          .length - 1;
 
     usersWithSameDestinationThanConnectedUser =
-        users
-            .filter(usr => usr.travel.to === user.travel.to)
-            .length -1 ;
+      users
+          .filter(usr => usr.travel.to === user.travel.to)
+          .length -1 ;
 
     usersWithSameLocation =
-        users
-            .reduce((acc, usr) => {
-                  acc[usr.travel.from] = (acc[usr.travel.from] || 0) + (1 / nbUsers);
-                  return acc
-                },
-              []);
-
-    usersWithSameDestination =
-        users
-            .reduce((acc, usr) => {
-                acc[usr.travel.to] = (acc[usr.travel.to] || 0) + (1 / nbUsers);
-                return acc;
+      users
+          .reduce((acc, usr) => {
+                acc[usr.travel.from] = (acc[usr.travel.from] || 0) + (1 / nbUsers);
+                return acc
               },
             []);
 
-    console.log(usersWithSameLocation)
-    console.log(usersWithSameDestination)
+    usersWithSameDestination =
+      users
+          .reduce((acc, usr) => {
+              acc[usr.travel.to] = (acc[usr.travel.to] || 0) + (1 / nbUsers);
+              return acc;
+            },
+          []);
   }
 
 </script>
@@ -57,6 +57,6 @@
   <p>Users with the same destination than you : {usersWithSameDestinationThanConnectedUser}</p>
 
   <h2>All statistics</h2>
-  {usersWithSameLocation}
-
+  <RadarChart data={convertToChartData(usersWithSameLocation)}/>
+  <RadarChart data={convertToChartData(usersWithSameDestination)}/>
 </template>
