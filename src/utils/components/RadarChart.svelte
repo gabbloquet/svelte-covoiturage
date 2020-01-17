@@ -1,17 +1,12 @@
 <script>
-  import Chart from 'chart.js';
+  import loadAnInjectChartData from "./chartService";
 
   export let data;
 
-  let ctx = document.getElementById('myChart');
-
-  console.log(data)
-
-  // if(data.length > 0)
-  //   let myRadarChart = new Chart(ctx, {
-  //     type: 'radar',
-  //     data: data
-  //   });
+  $: {
+    if(data && Object.keys(data).length)
+      loadAnInjectChartData(data);
+  }
 </script>
 
 <style>
@@ -19,5 +14,5 @@
 </style>
 
 <template>
-  <canvas id="myChart" width="400" height="400"></canvas>
+  <canvas id="myChart" width="100" height="100"></canvas>
 </template>

@@ -1,6 +1,5 @@
 <script>
   import RadarChart from "../../utils/components/RadarChart.svelte";
-  import convertToChartData from "../../utils/services/chart/chartService";
 
   export let users = [];
   export let user;
@@ -57,6 +56,6 @@
   <p>Users with the same destination than you : {usersWithSameDestinationThanConnectedUser}</p>
 
   <h2>All statistics</h2>
-  <RadarChart data={convertToChartData(usersWithSameLocation)}/>
-  <RadarChart data={convertToChartData(usersWithSameDestination)}/>
+  <RadarChart data={usersWithSameLocation}/>
+  <RadarChart data={usersWithSameDestination}/>
 </template>
