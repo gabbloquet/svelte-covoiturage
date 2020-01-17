@@ -14,7 +14,7 @@ function loadAnInjectChartData(chart, dataToConvert) {
       },
       ticks: {
         suggestedMin: 0,
-        suggestedMax: 1
+        suggestedMax: 100
       }
     }
   };
@@ -40,7 +40,9 @@ function convertToChartData(usersStats) {
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgb(54, 162, 235)',
-      data: Object.values(usersStats)
+      data:
+        Object.values(usersStats)
+          .map(percent => percent * 100)
     }]
   }
 }
