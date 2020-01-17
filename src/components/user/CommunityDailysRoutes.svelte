@@ -1,9 +1,22 @@
 <script>
+  import {createEventDispatcher} from "svelte";
+
+  const dispatch = createEventDispatcher();
+
   export let users;
   export let user;
 
+  let selectedUser;
+
   function isNotTheConnectedUser(usr){
     return user !== usr
+  }
+
+  function navigateToUserProfile(user){
+    dispatch(
+        'selectedUser',
+        user
+    );
   }
 </script>
 
@@ -30,7 +43,7 @@
       { #each users as usr }
         {#if isNotTheConnectedUser(usr)}
           <tr>
-            <td>{usr.firstname} {usr.lastname}</td>
+            <td><a on:click={navigateToUserProfile(usr)}>{usr.firstname} {usr.lastname}</a></td>
             {#if usr.travel.from !== ""}
               <td>({usr.travel.from} - {usr.travel.to})</td>
             {:else}

@@ -1,8 +1,11 @@
 <script>
+  import {navigateToUserProfile} from "../../utils/services/user/userService";
+
   export let users;
   export let user;
 
   let usersWithSimilarRoutes = [];
+  let selectedUser;
 
   function haveTheSameTravel(user, usr) {
     return (usr.travel.from === user.travel.from && usr.travel.to === user.travel.to)
@@ -13,6 +16,10 @@
     usersWithSimilarRoutes =
         users
             .filter(usr => haveTheSameTravel(user, usr));
+  }
+
+  function navigateTo(param) {
+    console.log(param)
   }
 </script>
 
@@ -43,7 +50,7 @@
       <tbody>
         {#each usersWithSimilarRoutes as usr}
           <tr>
-            <td>{usr.firstname} {usr.lastname}</td>
+            <td><button on:click={navigateToUserProfile}>{usr.firstname} {usr.lastname}</button></td>
             <td>({usr.travel.from} - {usr.travel.to})</td>
           </tr>
         {/each}

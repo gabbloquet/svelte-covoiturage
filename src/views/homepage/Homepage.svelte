@@ -7,7 +7,9 @@
   import UsersStatistiques from "../../components/user/UsersStatistiques.svelte";
 
   export let user;
+
   let users = [];
+  let selectedUser;
 
   onMount(async () => {
       users = getAllUsers();
@@ -20,24 +22,34 @@
     users = getAllUsers();
   }
 
+  function selectUser(usr){
+    selectedUser = usr;
+  }
+
 </script>
 
 <template>
   <h1>Welcome {user.firstname} !</h1>
 
   <div class="bandeau">
-    <div>
-      <UserRoute userFrom={user.travel.from} userTo={user.travel.to} on:saveUserTravel={saveUser}/>
-    </div>
+    {#if !selectedUser}
+      <div>
+        <UserRoute userFrom={user.travel.from} userTo={user.travel.to} on:saveUserTravel={saveUser}/>
+      </div>
 
-    <div>
-      <SimilarDailyRoutes users={users} user={user}/>
-      <UsersRoutes users={users} user={user}/>
-    </div>
+      <div>
+        <SimilarDailyRoutes users={users} user={user} on:selectedUser={selectUser}/>
+        <UsersRoutes users={users} user={user} on:selectedUser={selectUser}/>
+      </div>
 
-    <div>
-      <UsersStatistiques users={users} user={user}/>
-    </div>
+      <div>
+        <UsersStatistiques users={users} user={user}/>
+      </div>
+    {:else}
+      <div>
+        {selectedUser}
+      </div>
+    {/if}
   </div>
 </template>
 
