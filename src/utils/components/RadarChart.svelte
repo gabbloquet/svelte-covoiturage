@@ -3,9 +3,10 @@
 
   export let data;
 
+  let chartCanvas;
+
   $: {
-    if(data && Object.keys(data).length)
-      loadAnInjectChartData(data);
+    loadAnInjectChartData(chartCanvas, data);
   }
 </script>
 
@@ -14,5 +15,5 @@
 </style>
 
 <template>
-  <canvas id="myChart" width="100" height="100"></canvas>
+  <canvas bind:this={chartCanvas} width="100" height="100"></canvas>
 </template>
