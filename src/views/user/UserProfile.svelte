@@ -1,5 +1,15 @@
 <script>
+  import {createEventDispatcher} from "svelte";
+
   export let user;
+
+  const dispatch = createEventDispatcher();
+
+  function unselectUser(){
+    dispatch(
+        'unselectedUser'
+    );
+  }
 </script>
 
 <style>
@@ -24,7 +34,10 @@
 </style>
 
 <div class="profile">
-  <h2>{user.firstname} {user.lastname}</h2>
+  <h2>
+    <button on:click={unselectUser}> X </button>
+    {user.firstname} {user.lastname}
+  </h2>
   <div class="daily-travel">
     <h3>Daily Travel</h3>
     <p>{user.travel.from === '' ? 'Undefined' : user.travel.from }</p>

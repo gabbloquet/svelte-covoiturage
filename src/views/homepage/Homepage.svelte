@@ -27,6 +27,10 @@
     selectedUser = event.detail;
   }
 
+  function unselectUser() {
+    selectedUser = undefined;
+  }
+
 </script>
 
 <template>
@@ -48,7 +52,7 @@
       </div>
     {:else}
       <div>
-        <UserProfile user={selectedUser}/>
+        <UserProfile user={selectedUser} on:unselectedUser={unselectUser}/>
       </div>
     {/if}
   </div>
