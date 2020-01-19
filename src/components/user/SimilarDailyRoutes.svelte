@@ -1,5 +1,7 @@
 <script>
-  import {navigateToUserProfile} from "../../utils/services/user/userService";
+  import {createEventDispatcher} from "svelte";
+
+  const dispatch = createEventDispatcher();
 
   export let users;
   export let user;
@@ -18,8 +20,11 @@
             .filter(usr => haveTheSameTravel(user, usr));
   }
 
-  function navigateTo(param) {
-    console.log(param)
+  function navigateToUserProfile(user){
+    dispatch(
+        'selectedUser',
+        user
+    );
   }
 </script>
 

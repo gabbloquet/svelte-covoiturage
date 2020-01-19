@@ -5,6 +5,7 @@
   import UsersRoutes from '../../components/user/CommunityDailysRoutes.svelte'
   import SimilarDailyRoutes from "../../components/user/SimilarDailyRoutes.svelte";
   import UsersStatistiques from "../../components/user/UsersStatistiques.svelte";
+  import UserProfile from "../user/UserProfile.svelte";
 
   export let user;
 
@@ -22,8 +23,8 @@
     users = getAllUsers();
   }
 
-  function selectUser(usr){
-    selectedUser = usr;
+  function selectUser(event) {
+    selectedUser = event.detail;
   }
 
 </script>
@@ -47,7 +48,7 @@
       </div>
     {:else}
       <div>
-        {selectedUser}
+        <UserProfile user={selectedUser}/>
       </div>
     {/if}
   </div>
