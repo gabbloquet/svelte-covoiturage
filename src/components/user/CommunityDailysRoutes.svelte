@@ -22,6 +22,7 @@
 
 <style lang="scss">
   @import '../../utils/style/table';
+  @import '../../utils/style/link';
 
   table {
     width: 25em;
@@ -29,6 +30,14 @@
 
   h2 {
     color: var(--COLOR-GREEN-LIGHT);
+  }
+
+  a {
+    font-style: italic;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 </style>
 

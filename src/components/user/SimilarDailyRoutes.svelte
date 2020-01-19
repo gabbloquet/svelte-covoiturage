@@ -30,6 +30,7 @@
 
 <style lang="scss">
   @import '../../utils/style/table';
+  @import '../../utils/style/link';
 
   table {
     width: 25em;
@@ -55,7 +56,7 @@
       <tbody>
         {#each usersWithSimilarRoutes as usr}
           <tr>
-            <td><button on:click={navigateToUserProfile}>{usr.firstname} {usr.lastname}</button></td>
+            <td><a on:click={navigateToUserProfile(usr)}>{usr.firstname} {usr.lastname}</a></td>
             <td>({usr.travel.from} - {usr.travel.to})</td>
           </tr>
         {/each}
