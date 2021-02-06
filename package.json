@@ -1,6 +1,6 @@
 {
-  "homepage": "https://gabbloquet.github.io/covoiturage",
-  "name": "svelte-app",
+  "homepage": "https://gabbloquet.github.io/svelte-covoiturage/",
+  "name": "covoiturage",
   "version": "1.0.0",
   "scripts": {
     "predeploy": "npm run build",
