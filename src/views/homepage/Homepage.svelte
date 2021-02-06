@@ -65,7 +65,7 @@
     text-transform: uppercase;
     font-size: 4em;
     font-weight: 100;
-    color: var(--COLOR-CYAN);
+    color: var(--COLOR-PURPLE);
   }
 
   .bandeau {

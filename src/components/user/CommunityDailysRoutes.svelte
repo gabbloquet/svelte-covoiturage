@@ -29,7 +29,7 @@
   }
 
   h2 {
-    color: var(--COLOR-GREEN-LIGHT);
+    color: var(--COLOR-GREY-LIGHT);
   }
 
   a {
@@ -52,7 +52,7 @@
       { #each users as usr }
         {#if isNotTheConnectedUser(usr)}
           <tr>
-            <td><a on:click={navigateToUserProfile(usr)}>{usr.firstname} {usr.lastname}</a></td>
+            <td><span on:click={navigateToUserProfile(usr)}>{usr.firstname} {usr.lastname}</span></td>
             {#if usr.travel.from !== ""}
               <td>({usr.travel.from} - {usr.travel.to})</td>
             {:else}

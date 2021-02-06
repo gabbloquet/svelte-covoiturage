@@ -19,13 +19,13 @@
 
   h2 {
     font-size: xx-large;
-    color: var(--COLOR-YELLOW);
+    color: var(--COLOR-PURPLE);
   }
 
   .profile {
     width: 25em;
     color: white;
-    background-color: var(--COLOR-GREEN-PASTEL);
+    background-color: var(--COLOR-GREY);
   }
 
   .daily-travel {

@@ -42,7 +42,7 @@
   @import '../../utils/style/form';
 
   h2 {
-    color: var(--COLOR-GREEN-LIGHT);
+    color: var(--COLOR-GREY-LIGHT);
   }
 
   form {

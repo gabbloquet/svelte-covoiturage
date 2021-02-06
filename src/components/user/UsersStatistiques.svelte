@@ -46,7 +46,7 @@
 
 <style>
   h2 {
-    color: var(--COLOR-GREEN-LIGHT);
+    color: var(--COLOR-GREY-LIGHT);
   }
 </style>
 

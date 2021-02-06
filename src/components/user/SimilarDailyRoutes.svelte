@@ -37,7 +37,7 @@
   }
 
   h2 {
-    color: var(--COLOR-GREEN-LIGHT);
+    color: var(--COLOR-GREY-LIGHT);
   }
 
   p {
@@ -56,7 +56,7 @@
       <tbody>
         {#each usersWithSimilarRoutes as usr}
           <tr>
-            <td><a on:click={navigateToUserProfile(usr)}>{usr.firstname} {usr.lastname}</a></td>
+            <td><span on:click={navigateToUserProfile(usr)}>{usr.firstname} {usr.lastname}</span></td>
             <td>({usr.travel.from} - {usr.travel.to})</td>
           </tr>
         {/each}
